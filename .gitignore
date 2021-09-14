@@ -1,8 +1,9 @@
 .idea
-nakama/.idea
-unity/.idea
+/nakama/.idea
+/unity/.idea
 /new_unity_project/.vs/
 /nakama/vendor/
 /new_unity_project/Library/
 /new_unity_project/obj/
 /new_unity_project/Temp/
+/nakama/backend.so
