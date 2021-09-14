@@ -1,27 +1,65 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Script
 {
-    // Start is called before the first frame update
-    public float maxWidth;
-    public float maxHeight;
-    public float moveSpeed;
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        maxHeight = Screen.height;
-        maxWidth = Screen.width;
-    }
+        // Start is called before the first frame update
+        public float maxWidth;
+        public float maxHeight;
+        public float moveSpeed;
+        private Rigidbody2D _rigidbody2D;
+        private float _h;
+        private float _v;
+        private Camera _camera;
+        private bool _isCameraNotNull;
+        private Vector2 _pos;
+        private Vector2 _newPosition = new Vector2();
 
-    // Update is called once per frame
-    void Update()
-    {
-        float H = Input.GetAxis("Horizontal");
-        float V = Input.GetAxis("Vertical");
-        if (H != 0 || V != 0)
+        void Start()
         {
-            transform.Translate(new Vector3(H, V, 0) * Time.deltaTime * moveSpeed, Space.World);
+            maxHeight = Screen.height;
+            maxWidth = Screen.width;
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+            _camera = Camera.main;
+            _isCameraNotNull = _camera != null;
+        }
+
+        private void FixedUpdate()
+        {
+            _h = Input.GetAxis("Horizontal");
+            _v = Input.GetAxis("Vertical");
+
+            // 理想中要移动的速度
+            _newPosition = new Vector2(_h * moveSpeed, _v * moveSpeed);
+            // 同时其实只有两个方向上的触发
+            _pos = _camera.WorldToScreenPoint(transform.position);
+            Debug.Log(_pos);
+
+            //  这是在往下持续移动
+            if (_pos.y <= 0 && _v <= 0)
+            {
+                _newPosition.y = 0;
+            }
+
+            if (_pos.y >= maxHeight && _v >= 0)
+            {
+                _newPosition.y = 0;
+            }
+
+
+            if (_pos.x <= 0 && _h <= 0)
+            {
+                _newPosition.x = 0;
+            }
+
+            if (_pos.x >= maxWidth && _h >= 0)
+            {
+                _newPosition.x = 0;
+            }
+
+            _rigidbody2D.velocity = _newPosition;
         }
     }
 }
