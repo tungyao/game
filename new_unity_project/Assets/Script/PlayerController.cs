@@ -35,8 +35,6 @@ namespace Script
             _newPosition = new Vector2(_h * moveSpeed, _v * moveSpeed);
             // 同时其实只有两个方向上的触发
             _pos = _camera.WorldToScreenPoint(transform.position);
-            Debug.Log(_pos);
-
             //  这是在往下持续移动
             if (_pos.y <= 0 && _v <= 0)
             {
