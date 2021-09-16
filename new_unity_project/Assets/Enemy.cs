@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(4.0f);
             flow += 1;
             Debug.LogFormat("get number {0}",flow);
         }
