@@ -53,10 +53,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Nakama\Runtime\UnityLogger.cs" />
-     <Compile Include="Assets\Nakama\Runtime\ClientExtensions.cs" />
-     <Compile Include="Assets\Nakama\Runtime\JsWebSocketAdapter.cs" />
      <Compile Include="Assets\Nakama\Runtime\UnitySocket.cs" />
      <Compile Include="Assets\Nakama\Runtime\UnityWebRequestAdapter.cs" />
+     <Compile Include="Assets\Nakama\Runtime\ClientExtensions.cs" />
+     <Compile Include="Assets\Nakama\Runtime\JsWebSocketAdapter.cs" />
      <None Include="Assets\Nakama\Runtime\NakamaRuntime.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Package/Software/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
