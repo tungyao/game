@@ -10,6 +10,8 @@ public class EnemyBlueController : MonoBehaviour
     private Camera _camera;
     private bool _isCameraNotNull;
 
+    public string weaponName = "leaser";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +27,13 @@ public class EnemyBlueController : MonoBehaviour
         if (_isCameraNotNull)
         {
             var pos = _camera.WorldToScreenPoint(transform.position);
-            if (pos.y > maxHeight * 2 || pos.x > maxWidth * 2 || pos.y < -maxHeight/3 || pos.x < -maxWidth/3)
+            if (pos.y > maxHeight * 2 || pos.x > maxWidth * 2 || pos.y < -maxHeight / 3 || pos.x < -maxWidth / 3)
             {
                 Destroy(gameObject);
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Debug.Log("接触到了人物");
