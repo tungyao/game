@@ -53,10 +53,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Nakama\Runtime\UnityLogger.cs" />
-     <Compile Include="Assets\Nakama\Runtime\ClientExtensions.cs" />
-     <Compile Include="Assets\Nakama\Runtime\JsWebSocketAdapter.cs" />
      <Compile Include="Assets\Nakama\Runtime\UnitySocket.cs" />
      <Compile Include="Assets\Nakama\Runtime\UnityWebRequestAdapter.cs" />
+     <Compile Include="Assets\Nakama\Runtime\ClientExtensions.cs" />
+     <Compile Include="Assets\Nakama\Runtime\JsWebSocketAdapter.cs" />
      <None Include="Assets\Nakama\Runtime\NakamaRuntime.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files (x86)/UnityEngine/2020.3.18f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -295,14 +295,14 @@
  <Reference Include="log4netPlastic">
  <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.render-pipelines.core@10.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
  <Reference Include="Nakama">
  <HintPath>E:/Project/game/new_unity_project/Assets/Nakama/Runtime/Plugins/Nakama.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
  <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.NRefactory">
- <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.render-pipelines.core@10.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files (x86)/UnityEngine/2020.3.18f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

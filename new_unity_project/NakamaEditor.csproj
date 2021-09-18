@@ -53,13 +53,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Nakama\Editor\Snippets\MatchmakerWithRelayedMultiplayer.cs" />
+     <Compile Include="Assets\Nakama\Editor\Snippets\AccountAndUsers.cs" />
+     <Compile Include="Assets\Nakama\Editor\Snippets\WebGLConnect.cs" />
+     <Compile Include="Assets\Nakama\Editor\Snippets\NakamaManager.cs" />
      <Compile Include="Assets\Nakama\Editor\Snippets\DeviceAuthentication.cs" />
      <Compile Include="Assets\Nakama\Editor\Snippets\RealtimeChatRoom.cs" />
      <Compile Include="Assets\Nakama\Editor\Snippets\RejoinChatAfterDisconnect.cs" />
      <Compile Include="Assets\Nakama\Editor\Snippets\NakamaManagerUsage.cs" />
-     <Compile Include="Assets\Nakama\Editor\Snippets\AccountAndUsers.cs" />
-     <Compile Include="Assets\Nakama\Editor\Snippets\WebGLConnect.cs" />
-     <Compile Include="Assets\Nakama\Editor\Snippets\NakamaManager.cs" />
      <Compile Include="Assets\Nakama\Editor\Snippets\SocketConnect.cs" />
      <None Include="Assets\Nakama\Editor\NakamaEditor.asmdef" />
      <None Include="Assets\Nakama\Editor\link.xml" />
@@ -300,14 +300,14 @@
  <Reference Include="log4netPlastic">
  <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.render-pipelines.core@10.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
  <Reference Include="Nakama">
  <HintPath>E:/Project/game/new_unity_project/Assets/Nakama/Runtime/Plugins/Nakama.dll</HintPath>
  </Reference>
  <Reference Include="unityplastic">
  <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.collab-proxy@1.9.0/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
- </Reference>
- <Reference Include="ICSharpCode.NRefactory">
- <HintPath>E:/Project/game/new_unity_project/Library/PackageCache/com.unity.render-pipelines.core@10.6.0/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files (x86)/UnityEngine/2020.3.18f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
