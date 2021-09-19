@@ -46,7 +46,6 @@ public class Enemy : MonoBehaviour
             Debug.LogFormat("get number {0}", flow);
         }
     }
-
     private void LateUpdate()
     {
         cycleTime += Time.deltaTime;
@@ -64,7 +63,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                var one = Instantiate(_one);
+                Instantiate(_one);
             }
 
             cycleTime = 0;

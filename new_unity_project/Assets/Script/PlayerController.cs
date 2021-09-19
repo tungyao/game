@@ -48,6 +48,7 @@ namespace Script
             _camera = Camera.main;
             _isCameraNotNull = _camera != null;
             tipsPost.GetComponent<Text>().text = "";
+            _hitBullet = Bullet[0];
         }
 
         // 角色获取到的子弹
@@ -93,15 +94,16 @@ namespace Script
 
         private void Update()
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
+                shotMusic();
                 if (_hitBullet != null && !_hitBullet.CompareTag("leaser"))
                 {
                     var bullet = _hitBullet;
                     var transform1 = transform;
                     var position = transform1.position;
                     bullet.transform.position =
-                        new Vector3(position.x, (float) (position.y + 0.5), position.z);
+                        new Vector3(position.x, (float)(position.y + 0.5), position.z);
                     Instantiate(bullet);
                 }
 
@@ -114,7 +116,7 @@ namespace Script
                 }
             }
 
-            tipsPost.transform.position = transform.position;
+            tipsPost.transform.position = transform.position + new Vector3(0.7f, -0.3f);
         }
 
         // 生成激光武器并倒计时
@@ -179,6 +181,14 @@ namespace Script
             _getLeaserWeapon = null;
             _hitBullet = null;
             tipsPost.GetComponent<Text>().text = "";
+        }
+
+        private void shotMusic()
+        {
+            if (_hitBullet!=null && !_hitBullet.CompareTag("leaser"))
+            {
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 }
