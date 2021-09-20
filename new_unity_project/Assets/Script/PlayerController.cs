@@ -39,6 +39,9 @@ namespace Script
 
         // 接受到的激光武器
         private GameObject _getLeaserWeapon;
+        public AudioClip[] bulletMusic;
+
+        private AudioSource _audio;
 
         void Start()
         {
@@ -96,7 +99,7 @@ namespace Script
         {
             if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
             {
-                shotMusic();
+                ShotMusic();
                 if (_hitBullet != null && !_hitBullet.CompareTag("leaser"))
                 {
                     var bullet = _hitBullet;
@@ -112,6 +115,10 @@ namespace Script
                 if (_getLeaserWeapon != null && _getLeaserWeapon.CompareTag("leaser") && _isLeaserFired == false)
                 {
                     CreateLeaserAndCountdown();
+                    _audio = GetComponent<AudioSource>();
+                    _audio.clip = bulletMusic[1];
+                    _audio.volume = 0.2f;
+                    _audio.Play();
                     _isLeaserFired = true;
                 }
             }
@@ -174,20 +181,26 @@ namespace Script
                 yield return new WaitForFixedUpdate();
                 x.SetPosition(1, new Vector2(x.GetPosition(1).x, x.GetPosition(1).y - (0.1f * i)));
                 i += 0.3f;
+                _audio.volume -= 0.003f;
             }
 
             Destroy(leaser);
+            var source = GetComponent<AudioSource>();
+            source.clip = bulletMusic[1];
+            source.Stop();
             _isLeaserFired = false;
             _getLeaserWeapon = null;
-            _hitBullet = null;
+            _hitBullet = Bullet[0];
             tipsPost.GetComponent<Text>().text = "";
         }
 
-        private void shotMusic()
+        private void ShotMusic()
         {
-            if (_hitBullet!=null && !_hitBullet.CompareTag("leaser"))
+            if (_hitBullet != null && !_hitBullet.CompareTag("leaser"))
             {
-                GetComponent<AudioSource>().Play();
+                var source = GetComponent<AudioSource>();
+                source.clip = bulletMusic[0];
+                source.Play();
             }
         }
     }
