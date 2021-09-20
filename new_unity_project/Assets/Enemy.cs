@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     {
         _camera = Camera.main;
         _isCameraNotNull = _camera != null;
-        maxHeight = Screen.height + 50;
+        maxHeight = Screen.height + 250;
         maxWidth = Screen.width;
         StartCoroutine(UpFLow());
     }

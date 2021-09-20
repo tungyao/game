@@ -11,6 +11,7 @@ public class EnemyBlueController : MonoBehaviour
     private bool _isCameraNotNull;
 
     public string weaponName = "leaser";
+    private static readonly int IsDead = Animator.StringToHash("isDead");
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,14 @@ public class EnemyBlueController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("接触到了人物");
+        if (collision.CompareTag("Player"))
+        {
+            Animator animator = new Animator();
+            if (TryGetComponent<Animator>(out animator))
+            {
+                Debug.Log("接触到了人物 --- Blue");
+                animator.SetBool(IsDead,true);
+            }
+        }
     }
 }

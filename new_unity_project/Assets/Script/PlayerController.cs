@@ -129,7 +129,7 @@ namespace Script
         // 用来碰撞 从而获取该子弹
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_getLeaserWeapon == null)
+            if (_getLeaserWeapon == null && !other.CompareTag("bullet"))
             {
                 Debug.Log(other.GetComponent<EnemyBlueController>().weaponName);
                 foreach (var variable in leaserShotDot)
