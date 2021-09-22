@@ -10,6 +10,7 @@ import (
 // InitModule All Go modules must have a InitModule function with this exact signature.
 func InitModule(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runtime.NakamaModule, initializer runtime.Initializer) error {
 	// Register the RPC function.
+	logger.Info("HELLO WORLD XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 	if err := initializer.RegisterRpc("my_unique_id", SomeExample); err != nil {
 		logger.Error("Unable to register: %v", err)
 		return err

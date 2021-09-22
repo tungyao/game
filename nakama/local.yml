@@ -1,0 +1,46 @@
+name: nakama-node-1
+data_dir: "./"
+
+logger:
+  level: DEBUG
+
+metrics:
+  reporting_freq_sec: 60
+  namespace: ""
+  prometheus_port: 0
+
+database:
+  address:
+    - "game:ykEXcA6ha73Y@120.77.242.25:5432/game"
+  conn_max_lifetime_ms: 0
+  max_open_conns: 0
+  max_idle_conns: 100
+
+runtime:
+  env:
+    - "example_apikey=example_apivalue"
+    - "encryptionkey=afefa==e332*u13=971mldq"
+  path: "/mnt/c/Package/Devople/my_game/nakama"
+  http_key: "defaultkey"
+
+socket:
+  server_key: "defaultkey"
+  port: 7350
+  protocol: udp
+  max_message_size_bytes: 4096 # bytes
+  read_timeout_ms: 10000
+  write_timeout_ms: 10000
+  idle_timeout_ms: 60000
+  write_wait_ms: 5000
+  pong_wait_ms: 10000
+  ping_period_ms: 8000 # Must be less than pong_wait_ms
+  outgoing_queue_size: 16
+
+session:
+  encryption_key: "defaultencryptionkey"
+  token_expiry_sec: 60
+  refresh_token_expiry_sec: 3600
+console:
+  port: 7351
+  username: "admin"
+  password: "password"

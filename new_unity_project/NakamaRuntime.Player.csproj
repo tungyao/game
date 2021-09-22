@@ -256,6 +256,9 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Package/Devople/my_game/new_unity_project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
+ <Reference Include="DOTween">
+ <HintPath>C:/Package/Devople/my_game/new_unity_project/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
  <Reference Include="Nakama">
  <HintPath>C:/Package/Devople/my_game/new_unity_project/Assets/Nakama/Runtime/Plugins/Nakama.dll</HintPath>
  </Reference>
