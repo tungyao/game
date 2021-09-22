@@ -30,11 +30,11 @@ public class BackGroud : MonoBehaviour
         var transform1 = transform;
         var pos = transform1.position;
         transform1.position = pos - new Vector3(0, groundSpeed);
-        if (pos.y < -41f * 4)
+        if (pos.y < -41f * 3)
         {
             Destroy(gameObject);
         }
-        else if (pos.y < -15f && _isCloned == false)
+        else if (pos.y < -12f && _isCloned == false)
         {
             CreateNewGround(pos);
         }
@@ -44,7 +44,7 @@ public class BackGroud : MonoBehaviour
     private void CreateNewGround(Vector3 pos)
     {
         var g = Instantiate(groundFre);
-        g.transform.position = new Vector3(0, 25f, 0);
+        g.transform.position = new Vector3(0, 28.8f, 0);
 
         _isCloned = true;
     }

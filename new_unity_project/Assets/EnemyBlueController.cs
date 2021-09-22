@@ -35,6 +35,9 @@ public class EnemyBlueController : MonoBehaviour
         }
     }
 
+    private bool _isLeaserTrigger = false;
+    private float _leaserStayTime;
+    public bool isDead = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -43,7 +46,30 @@ public class EnemyBlueController : MonoBehaviour
             if (TryGetComponent<Animator>(out animator))
             {
                 Debug.Log("接触到了人物 --- Blue");
-                animator.SetBool(IsDead,true);
+                animator.SetBool(id: IsDead, value: true);
+            }
+        }
+
+        if (collision.CompareTag("leaser") && _isLeaserTrigger == false && isDead == false)
+        {
+            _isLeaserTrigger = true;
+            _leaserStayTime = Time.fixedTime;
+            Debug.Log("接触到了激光");
+        }
+    }
+
+    private IEnumerator OnTriggerStay2D(Collider2D other)
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (other.CompareTag("leaser") && Time.fixedTime - _leaserStayTime > 0.5f && isDead == false)
+        {
+            Debug.Log("是不是接触了2秒");
+            Animator animator = new Animator();
+            if (TryGetComponent<Animator>(out animator))
+            {
+                Debug.Log("接触到了人物 --- Blue");
+                animator.SetBool( "isDead", value: true);
+                isDead = true;
             }
         }
     }

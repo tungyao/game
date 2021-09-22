@@ -51,7 +51,8 @@ namespace Script
             _camera = Camera.main;
             _isCameraNotNull = _camera != null;
             tipsPost.GetComponent<Text>().text = "";
-            _hitBullet = Bullet[0];
+            // _hitBullet = Bullet[0];
+            // _getLeaserWeapon = leaserShotDot[0];
         }
 
         // 角色获取到的子弹
@@ -165,14 +166,14 @@ namespace Script
             if (_getLeaserWeapon != null && _getLeaserWeapon.CompareTag("leaser"))
             {
                 // 持续的将lease 缩小
-                StartCoroutine(DestoryTheLeaser(_hitBullet));
+                StartCoroutine(DestroyTheLeaser(_hitBullet));
             }
 
             Debug.Log("end leaser time");
         }
 
         // 移除激光武器
-        IEnumerator DestoryTheLeaser(GameObject leaser)
+        IEnumerator DestroyTheLeaser(GameObject leaser)
         {
             var x = leaser.GetComponent<LineRenderer>();
             var i = 1f;
@@ -192,6 +193,7 @@ namespace Script
             _getLeaserWeapon = null;
             _hitBullet = Bullet[0];
             tipsPost.GetComponent<Text>().text = "";
+            GetComponent<AudioSource>().volume = 1f;
         }
 
         private void ShotMusic()
@@ -203,5 +205,6 @@ namespace Script
                 source.Play();
             }
         }
+        
     }
 }
